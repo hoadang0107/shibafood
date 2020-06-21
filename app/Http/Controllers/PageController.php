@@ -13,5 +13,11 @@ class PageController extends Controller
         $res=Restaurant::all();
         return view('page.Homepage',['all_res'=>$res]);
     }
-
+public function getSearch(Request $request){
+        $restaurant = Restaurant::where('name','like','%'.$request->key.'%')
+        ->get();
+       
+        return view('page.search',compact('restaurant'));
+    
+    }
 }

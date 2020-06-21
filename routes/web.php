@@ -31,3 +31,7 @@ Route::get('addRes', 'RestaurantController@getAddRes');
 
 Route::get('profile', 'UserController@getProfile');
 Route::post('profile', 'UserController@postProfile');
+Route::get('search',[
+ 'as'=>'search',
+ 'uses'=>'PageController@getSearch'
+]);
