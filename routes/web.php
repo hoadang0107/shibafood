@@ -31,3 +31,6 @@ Route::get('addRes', 'RestaurantController@getAddRes');
 
 Route::get('profile', 'UserController@getProfile');
 Route::post('profile', 'UserController@postProfile');
+Route::get('admin', 'AdminController@index');
+Route::get('dashboard', 'AdminController@showDashboard');
+Route::post('admindashboard', 'AdminController@dashboard');
