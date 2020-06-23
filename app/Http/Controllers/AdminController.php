@@ -21,6 +21,7 @@ class AdminController extends Controller
  		$result = DB::table('tbl_admin')->where('adminemail',$adminemail)->where('adminpassword',$adminpassword)->first();
  		return view ('admin.dashboard');
     }
+<<<<<<< HEAD
 
     public function getAdminProfile(){
         $res=Restaurant::all();
@@ -31,5 +32,9 @@ class AdminController extends Controller
     {
         Restaurant::find($id)->delete();
         return redirect('admin')->with('success','Dữ liệu xóa thành công.');
+=======
+    
+ 		
+>>>>>>> admin
     }
 }
