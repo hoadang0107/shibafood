@@ -67,8 +67,8 @@ class UserController extends Controller
             // Lấy tên file
             $file_name = $request->file('avatar')->getClientOriginalName();
             // Lưu file vào thư mục upload với tên là biến $filename
-            $request->file('avata')->move('fashi/img',$file_name);
-            $user->avatar = $filename;
+            $request->file('avatar')->move('fashi/img',$file_name);
+            $user->avatar = $file_name;
         }
         else
         {
@@ -126,8 +126,8 @@ class UserController extends Controller
             // Lấy tên file
             $file_name = $request->file('avatar')->getClientOriginalName();
             // Lưu file vào thư mục upload với tên là biến $filename
-            $request->file('avata')->move('fashi/img',$file_name);
-            $user->avatar = $filename;
+            $request->file('avatar')->move('fashi/img',$file_name);
+            $user->avatar = $file_name;
         }
 		if( $request->password != "" || $request->password != "" ){
 

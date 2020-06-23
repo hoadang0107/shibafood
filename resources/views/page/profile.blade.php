@@ -14,7 +14,7 @@
                                     <img src="{{$user1->avatar}}" id="imgProfile" class="img-circle img-thumbnail" style="width: 100px; height: 100px; object-fit: contain"alt="avatar">
                                     <div class="middle">
                                         <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
-                                        <input type="file" style="display: none;" id="img_up" name="avatar" />
+                                        <input type="file" style="display: none;" id="profilePicture" name="avatar" />
                                     </div>
                                 </div>
                                 <div class="userData ml-3">
@@ -66,9 +66,9 @@
                                         </div>
                                         <hr />
                                         <div class="row edit_profile">
-                                            
+                                            <div class="col-sm-3 col-md-2 col-5">
                                             <label style="font-weight:bold;">Đổi mật khẩu</label>
-                                            
+                                            </div>
                                             <hr />
                                         </div>
 
