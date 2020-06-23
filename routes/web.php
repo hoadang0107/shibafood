@@ -29,5 +29,8 @@ Route::get('logout', 'UserController@getLogout');
 Route::post('addRes', 'RestaurantController@postAddRes');
 Route::get('addRes', 'RestaurantController@getAddRes');
 
+Route::post('editRes/{id}', 'RestaurantController@postEditRes');
+Route::get('editRes/{id}', 'RestaurantController@getEditRes');
+
 Route::get('profile', 'UserController@getProfile');
 Route::post('profile', 'UserController@postProfile');

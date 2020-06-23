@@ -11,6 +11,7 @@ use App\User;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 
 
 
@@ -64,15 +65,23 @@ class UserController extends Controller
 		$user->password = bcrypt($request->password);
 		$user->quyen = 0;
 		if ($request->hasFile('avatar')){
-            // Lấy tên file
-            $file_name = $request->file('avatar')->getClientOriginalName();
-            // Lưu file vào thư mục upload với tên là biến $filename
-            $request->file('avata')->move('fashi/img',$file_name);
-            $user->avatar = $filename;
+            // Lấy  file
+            $file = $request->file('avatar');
+
+            $duoi=$file->getClientOriginalExtension();
+            if($duoi !='jpg' && $duoi !='png' && $duoi !='jpeg'){
+                return redirect('signup')->with('thongbao','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
+            }
+            $name=$file->getClientOriginalName();
+            if(!file_exists("upload/user/" .$name))
+            $file->move("upload/user",$name);
+            $user->avatar=$name;
+
         }
         else
         {
-            $user->avatar="";
+            $user->avatar="avatar_2x.png";
+
         }
 		$isSuccess = $user->save();
 		if ($isSuccess) {
@@ -105,7 +114,7 @@ class UserController extends Controller
 
 	public function getProfile(){
 		$user = Auth::user();
-		return view('page.profile',['user1'=>$user]);
+		return view('page.profile1',['user'=>$user]);
 	}
 
 	public function postProfile(Request $request){
@@ -123,37 +132,43 @@ class UserController extends Controller
 		$user = Auth::user();
 		$user->name = $request->name;
 		if ($request->hasFile('avatar')){
-            // Lấy tên file
-            $file_name = $request->file('avatar')->getClientOriginalName();
-            // Lưu file vào thư mục upload với tên là biến $filename
-            $request->file('avata')->move('fashi/img',$file_name);
-            $user->avatar = $filename;
+            // Lấy  file
+            $file = $request->file('avatar');
+
+            $duoi=$file->getClientOriginalExtension();
+            if($duoi !='jpg' && $duoi !='png' && $duoi !='jpeg'){
+                return redirect('signup')->with('thongbao','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
+            }
+            $name=$file->getClientOriginalName();
+
+            if(!file_exists("upload/user/" .$name))
+            $file->move("upload/user",$name);
+            $user->avatar=$name;
+
         }
-		if( $request->password != "" || $request->password != "" ){
+       
+		print_r($request->changePassword);
+        if ($request->changePassword == "on") {
+            $this->validate($request,
+                [
+                    'password' => 'required| min:6|max:32',
+                    'passwordAgain' => 'required|same:password'
+                ],
+                [
 
-			$this->validate($request,
-				[
-					'password' => 'required| min:6|max:32',
-					'passwordAgain' => 'required|same:password'
-				],
-				[
+                    'password.required' => 'Bạn chưa nhập mật khẩu',
+                    'password.min' => 'Mật khẩu phải có ít nhất 6 kí tự',
+                    'password.max' => 'Mật khẩu có nhiều nhất 32 kí tự',
+                    'passwordAgain.required' => 'Bạn chưa nhập lại mật khẩu',
+                    'passwordAgain.same' => 'Mật khẩu chưa khớp'
 
-					'password.required' => 'Bạn chưa nhập mật khẩu',
-					'password.min' => 'Mật khẩu phải có ít nhất 6 kí tự',
-					'password.max' => 'Mật khẩu có nhiều nhất 32 kí tự',
-					'passwordAgain.required' => 'Bạn chưa nhập lại mật khẩu',
-					'passwordAgain.same' => 'Mật khẩu chưa khớp'
-
-				]);
-
-		
-			$user->password = bcrypt($request->password);
-		}
-
+                ]);
+            $user->password = bcrypt($request->password);
+        }
 		
 		$user->save();
 
-		return redirect('profile')->with('thongbao', 'Thay đổi thành công');;
+		return redirect('profile')->with('thongbao', 'Thay đổi thành công');
 		
 	}
 

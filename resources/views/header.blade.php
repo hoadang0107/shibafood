@@ -142,8 +142,9 @@
                             <ul class="dropdown">
                                 @if(Auth::check())
                                 <li><a href="profile">User Profile</a></li>
+                                <li><a href="addRes">Add Restaurant</a></li>
                                 <li><a href="logout">Logout</a></li>                    
-                                <li><a href="#">Add Store</a></li>
+                                
                                 @else
                                 <li><a href="signup">Sign Up</a></li>
                                 <li><a href="login">Login</a></li>
