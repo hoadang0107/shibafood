@@ -33,6 +33,8 @@ Route::get('profile', 'UserController@getProfile');
 Route::post('profile', 'UserController@postProfile');
 
 Route::get('admin', 'AdminController@getAdminProfile');
+Route::get('admin/delete/{id}', 'AdminController@getDelete');
+
 Route::get('dashboard', 'AdminController@showDashboard');
 Route::post('admindashboard', 'AdminController@dashboard');
 

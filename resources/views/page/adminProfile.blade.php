@@ -27,20 +27,30 @@
                                 </ul>
                                 <div class="tab-content ml-1" id="myTabContent">
                                     <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
-                                        Tab list
-                                        <table border="1">
+                                        @if(session('success'))
+                                            <div class="alert alert-success">
+                                                {{session('success')}}
+                                            </div>
+                                        @endif
+                                        <table style="width: 100%">
                                             <tr>
-                                                <th>STT</th>
+                                                <th>Number</th>
                                                 <th>Store Name</th>
-                                                <th>User</th>
+                                                <th>UserID</th>
                                                 <th>Review</th>
                                                 <th>Star</th>
                                             </tr>
+                                            @foreach($all_res as $restaurant)
                                             <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>                                            
+                                                <td>{{$restaurant->id}}</td>
+                                                <td>{{$restaurant->name}}</td>
+                                                <td>{{$restaurant->userID}}</td>
+                                                <td>{{$restaurant->description}}</td>
+                                                <td>{{$restaurant->rating}}</td>
+                                                <td><a href="admin/delete/{{$restaurant->id}}">Delete</a>
+                                                </td>
+                                            </tr>
+                                            @endforeach                                            
                                         </table>
                                     </div>
                                     <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
@@ -57,4 +67,23 @@
             </div>
         </div>
     </div>
+<style>
+    table, th, td{
+        border:1px solid black;
+        text-align:center
+        
+    }
+    table{
+        border-collapse:collapse;
+    }
+    tr:hover{
+        background-color:#ddd;
+        cursor:pointer;
+    }
+    tr{
+        padding: 10px;
+        margin: 10px;
+        height: 30px;
+    }
+</style>
 @endsection
