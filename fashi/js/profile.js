@@ -37,10 +37,10 @@ $(document).ready(function () {
         $('#profilePicture').val('');
         // }
     });
-    $('.edit').on('click', function(){
-        $('.edit_profile').css({"display": "block"});
+    $('.edit').on('click', function () {
+        $('.edit_profile').css({ "display": "block" });
     });
-    $('.save_btn').on('click', function(){
-        $('.edit_profile').css({"display": "none"});
+    $('.save_btn').on('click', function () {
+        $('.edit_profile').css({ "display": "none" });
     });
 });
