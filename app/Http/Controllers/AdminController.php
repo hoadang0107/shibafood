@@ -20,4 +20,8 @@ class AdminController extends Controller
  		$result = DB::table('tbl_admin')->where('adminemail',$adminemail)->where('adminpassword',$adminpassword)->first();
  		return view ('admin.dashboard');
     }
+
+    public function getAdminProfile(){
+        return view('page.adminProfile');
+    }
 }
