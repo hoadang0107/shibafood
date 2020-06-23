@@ -46,4 +46,8 @@ class RestaurantController extends Controller
         return redirect('addRes')->with('thongbao','Thêm thành công');
 
     }
+    public function getRes($id){
+        $Restaurant = Restaurant::find($id);
+        return view('page.restaurant',['resRef'=>$Restaurant]);
+    }
 }

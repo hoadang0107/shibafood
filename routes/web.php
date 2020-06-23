@@ -28,6 +28,11 @@ Route::get('logout', 'UserController@getLogout');
 
 Route::post('addRes', 'RestaurantController@postAddRes');
 Route::get('addRes', 'RestaurantController@getAddRes');
+Route::get('restaurant/{id}',[
+'as'=>'Res_detail',
+'uses'=>'RestaurantController@getRes'
+]);
+
 
 Route::get('profile', 'UserController@getProfile');
 Route::post('profile', 'UserController@postProfile');
