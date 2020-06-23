@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
 
                 <li>
-                    <a href="signin">
+                    <a href="logout">
                         <i class="fa fa-user"></i>
                         <span>Đăng xuất</span>
                     </a>
