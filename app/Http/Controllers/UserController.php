@@ -76,7 +76,6 @@ class UserController extends Controller
             if(!file_exists("upload/user/" .$name))
             $file->move("upload/user",$name);
             $user->avatar=$name;
-
         }
         else
         {
@@ -134,7 +133,6 @@ class UserController extends Controller
 		if ($request->hasFile('avatar')){
             // Lấy  file
             $file = $request->file('avatar');
-
             $duoi=$file->getClientOriginalExtension();
             if($duoi !='jpg' && $duoi !='png' && $duoi !='jpeg'){
                 return redirect('signup')->with('thongbao','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');

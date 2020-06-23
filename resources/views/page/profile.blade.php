@@ -66,9 +66,9 @@
                                         </div>
                                         <hr />
                                         <div class="row edit_profile">
-                                            
+                                            <div class="col-sm-3 col-md-2 col-5">
                                             <label style="font-weight:bold;">Đổi mật khẩu</label>
-                                            
+                                            </div>
                                             <hr />
                                         </div>
 

@@ -107,4 +107,8 @@ class RestaurantController extends Controller
         return redirect('home');
 
     }
+    public function getRes($id){
+        $Restaurant = Restaurant::find($id);
+        return view('page.restaurant',['resRef'=>$Restaurant]);
+    }
 }
