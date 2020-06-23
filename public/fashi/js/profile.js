@@ -37,20 +37,8 @@ $(document).ready(function () {
         $('#profilePicture').val('');
         // }
     });
-    $('.edit').on('click', function(){
-        $('.edit_profile').css({"display": "block"});
-        $(document).ready(function () {
-            $("#changePassword").change(function () {
-                if ($(this).is(":checked")) {
-                    $(".password").removeAttr("disabled");
-                } else {
-                    $(".password").attr("disabled", '');
-                }
-            });
 
-        });
-    });
-    $('.save_btn').on('click', function(){
-        $('.edit_profile').css({"display": "none"});
+    $('.save_btn').on('click', function () {
+        $('.edit_profile').css({ "display": "none" });
     });
 });

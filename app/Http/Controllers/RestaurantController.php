@@ -39,11 +39,76 @@ class RestaurantController extends Controller
         $res->menu = $request->menu;
         $res->price = $request->price;
         $res->description = $request->description;
-        $res->picture = $request->store_img;
         $res->duyet = 1;
         $res->rating = 0;
-        $res->save();
-        return redirect('addRes')->with('thongbao','Thêm thành công');
 
+        if ($request->hasFile('store_img')){
+            // Lấy  file
+            $file = $request->file('store_img');
+
+            $duoi=$file->getClientOriginalExtension();
+            if($duoi !='jpg' && $duoi !='png' && $duoi !='jpeg'){
+                return redirect('signup')->with('thongbao','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
+            }
+            $name=$file->getClientOriginalName();
+            if(!file_exists("upload/restaurant/" .$name))
+            $file->move("upload/restaurant",$name);
+            $res->picture=$name;
+
+        }
+        else
+        {
+            $res->picture="nhahang_2.jpg";
+
+        }
+        $res->save();
+        return redirect('home');
+
+    }
+     public function getEditRes($id){
+        $res = Restaurant::find($id);
+        return view('page.editRes',['res'=>$res]);
+    }
+    public function postEditRes(Request $request,$id){
+        $res = Restaurant::find($id);
+        $this->validate($request,
+            [
+                'name' => 'required|min:3|max:100|unique:Restaurants,name'
+            ],
+            [
+                'name.required'=>'Bạn chưa nhập tên thể loại',
+                'name.unique'=>'Tên nhà hàng đã tồn tại',
+                'name.min'=>'Tên nhà hàng phải có độ dài từ 3 đến 100 kí tự',
+                'name.max'=>'Tên nhà hàng phải có độ dài từ 3 đến 100 kí tự'
+            ]);
+        $res->name = $request->name;
+        $res->phone = $request->phone;
+        $res->address = $request->address;
+        $res->menu = $request->menu;
+        $res->price = $request->price;
+        $res->description = $request->description;
+
+        if ($request->hasFile('store_img')){
+            // Lấy  file
+            $file = $request->file('store_img');
+
+            $duoi=$file->getClientOriginalExtension();
+            if($duoi !='jpg' && $duoi !='png' && $duoi !='jpeg'){
+                return redirect('signup')->with('thongbao','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
+            }
+            $name=$file->getClientOriginalName();
+            if(!file_exists("upload/restaurant/" .$name))
+            $file->move("upload/restaurant",$name);
+            $res->picture=$name;
+
+        }
+     
+        $res->save();
+        return redirect('home');
+
+    }
+    public function getRes($id){
+        $Restaurant = Restaurant::find($id);
+        return view('page.restaurant',['resRef'=>$Restaurant]);
     }
 }

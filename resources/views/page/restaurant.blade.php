@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="product-pic-zoom">
-                                <img class="product-big-img" src="img/product-single/product-1.jpg" alt="">
+                                <img class="product-big-img" src="{{$resRef->picture}}" alt="">
                                 <div class="zoom-icon">
                                     <i class="fa fa-search-plus"></i>
                                 </div>
@@ -22,8 +22,8 @@
                         <div class="col-lg-6">
                             <div class="product-details">
                                 <div class="pd-title">
-                                    <span>{{$resRef['address']}}</span>
-                                    <h3>{{$resRef['name']}}</h3>
+                                    <span>{{ $resRef->address }}</span>
+                                    <h3>{{ $resRef->name }}</h3>
                                     <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                                 </div>
                                 <div class="pd-rating">
@@ -65,7 +65,7 @@
                                         <div class="row">
                                             <div class="col-lg-7">
                                                 <h5>Introduction</h5>
-                                                <p> </p>
+                                                <p>{{ $resRef->description }} </p>
                                             <div class="col-lg-5">
                                                 <img src="img/product-single/tab-desc.jpg" alt="">
                                             </div>
@@ -91,20 +91,27 @@
                                             <tr>
                                                 <td class="p-catagory">Price</td>
                                                 <td>
-                                                    <div class="p-price">$$</div>
+                                                    <div class="p-price">{{ $resRef->price }}</div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="p-catagory">Address</td>
                                                 <td>
-                                                    <div class="cart-add">+ add to cart</div>
+                                                    <div class="cart-add">{{ $resRef->address }}</div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="p-catagory">Menu</td>
                                                 <td>
-                                                    <div class="p-stock">22 in stock</div>
+                                                    <div class="p-stock">{{ $resRef->menu }}</div>
                                                 </td>
+                                                <tr>
+                                                   <td class="p-catagory">Phone</td>
+                                                <td>
+                                                    <div class="p-stock">{{ $resRef->phone }}</div>
+                                                </td>
+                                                </tr>
+
                                         </table>
                                     </div>
                                 </div>

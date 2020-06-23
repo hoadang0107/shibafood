@@ -5,20 +5,20 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="profile">
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <form method="POST" action="profile1" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">                            
                                 <div class="image-container">
-                                    <img src="{{$user1->avatar}}" id="imgProfile" class="img-circle img-thumbnail" style="width: 100px; height: 100px; object-fit: contain"alt="avatar">
+                                    <img src="upload/user/{{$user1->avatar}}" id="imgProfile" class="img-circle img-thumbnail" style="width: 100px; height: 100px; object-fit: contain" alt="avatar">
                                     <div class="middle">
                                         <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                         <input type="file" style="display: none;" id="profilePicture" name="avatar" />
                                     </div>
                                 </div>
                                 <div class="userData ml-3">
-                                    <h3>{{$user1->name}}</h3>
+                                    <h3>User Profile</h3>
 
                                 </div>
 
@@ -106,20 +106,26 @@
                                             <hr />
                                         </div>
                                     
-                                        @if(session('thongbao'))
-                                        <div class="alert alert-danger">
-                                           {{session('thongbao')}}
-                                       </div>                                
-                                        @endif
+                                       
                                     </div>    
-                                    
-                
+                                
+
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="site-btn register-btn edit" style="margin-top: 10px;"><span>Change Password</span></button> 
-                        <button type="submit" class="site-btn register-btn save_btn" style="margin-top: 10px;"><span>Save</span></button>
 
+
+
+                        @if(session('thongbao'))
+                        <div class="alert alert-danger">
+                           {{session('thongbao')}}
+                        </div>                                
+                        @endif
+
+                     <button type="button" class="site-btn register-btn edit" style="margin-top: 10px;"><span>Change Password</span></button> 
+                     <button type="submit" class="site-btn register-btn save_btn" style="margin-top: 10px;"><span>Save</span></button>
+
+                     
                     </form>
 
                 </div>

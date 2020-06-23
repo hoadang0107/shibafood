@@ -6,7 +6,7 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
                         <h2>Register</h2>
-                        <form method="POST" action="signup">
+                        <form method="POST" action="signup" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 							<div class="group-input">
 								<label for="name">User Name</label>
@@ -44,10 +44,9 @@
                                 </span>
                                 @endif
 							</div>
-							<div class="group-input">
-                                <input type="file" id="img_up" name="avatar" style="display: none"/>
-                            </div>
+							
                             <div class="group-input">
+                                <input type="file" id="img_up" name="avatar" style="display: none"/>
                                 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
                                 <p id="Up_img" style="cursor: pointer;">Upload Avatar</p>
                                 @if ($errors->has('file'))
