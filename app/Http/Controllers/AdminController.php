@@ -21,7 +21,7 @@ class AdminController extends Controller
  		$result = DB::table('tbl_admin')->where('adminemail',$adminemail)->where('adminpassword',$adminpassword)->first();
  		return view ('admin.dashboard');
     }
-<<<<<<< HEAD
+
 
     public function getAdminProfile(){
         $res=Restaurant::all();
@@ -36,6 +36,6 @@ class AdminController extends Controller
     public function logout(){
     	return view ('adminlogin');
  		
->>>>>>> admin
+
     }
 }
