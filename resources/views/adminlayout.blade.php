@@ -8,24 +8,24 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link rel="stylesheet" href="../fashi/css/bootstrap.min.css" >
+<link rel="stylesheet" href="../fashi1/css/bootstrap.min.css" >
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<link href="../fashi/css/style.css" rel='stylesheet' type='text/css' />
-<link href="../fashi/css/style-responsive.css" rel="stylesheet"/>
+<link href="../fashi1/css/style.css" rel='stylesheet' type='text/css' />
+<link href="../fashi1/css/style-responsive.css" rel="stylesheet"/>
 <!-- font CSS -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
-<link rel="stylesheet" href="../fashi/css/font.css" type="text/css"/>
-<link href="../fashi/css/font-awesome.css" rel="stylesheet"> 
-<link rel="stylesheet" href="../fashi/css/morris.css" type="text/css"/>
+<link rel="stylesheet" href="../fashi1/css/font.css" type="text/css"/>
+<link href="../fashi1/css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="../fashi1/css/morris.css" type="text/css"/>
 <!-- calendar -->
-<link rel="stylesheet" href="../fashi/css/monthly.css">
+<link rel="stylesheet" href="../fashi1/css/monthly.css">
 <!-- //calendar -->
 <!-- //font-awesome icons -->
-<script src="../fashi/js/jquery2.0.3.min.js"></script>
-<script src="../fashi/js/raphael-min.js"></script>
-<script src="../fashi/js/morris.js"></script>
+<script src="../fashi1/js/jquery2.0.3.min.js"></script>
+<script src="../fashi1/js/raphael-min.js"></script>
+<script src="../fashi1/js/morris.js"></script>
 </head>
 <body>
 <section id="container">
@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="../fashi/img/3.png">
+                <img alt="" src="../fashi1/img/3.png">
                 <span class="username">Dương Lã</span>
                 <b class="caret"></b>
             </a>
@@ -120,13 +120,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </section>
 <!--main content end-->
 </section>
-<script src="../fashi/js/bootstrap.js"></script>
-<script src="../fashi/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="../fashi/js/scripts.js"></script>
-<script src="../fashi/js/jquery.slimscroll.js"></script>
-<script src="../fashi/js/jquery.nicescroll.js"></script>
+<script src="../fashi1/js/bootstrap.js"></script>
+<script src="../fashi1/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="../fashi1/js/scripts.js"></script>
+<script src="../fashi1/js/jquery.slimscroll.js"></script>
+<script src="../fashi1/js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="../fashi/js/jquery.scrollTo.js"></script>
+<script src="../fashi1/js/jquery.scrollTo.js"></script>
 <!-- morris JavaScript -->	
 <script>
 	$(document).ready(function() {
@@ -184,7 +184,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});
 	</script>
 <!-- calendar -->
-	<script type="text/javascript" src="../fashi/js/monthly.js"></script>
+	<script type="text/javascript" src="../fashi1/js/monthly.js"></script>
 	<script type="text/javascript">
 		$(window).load( function() {
 

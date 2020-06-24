@@ -37,16 +37,10 @@ $(document).ready(function () {
         $('#profilePicture').val('');
         // }
     });
-<<<<<<< HEAD
-
-    $('.save_btn').on('click', function () {
-        $('.edit_profile').css({ "display": "none" });
-=======
     $('.edit').on('click', function(){
         $('.edit_profile').css({"display": "block"});
     });
     $('.save_btn').on('click', function(){
         $('.edit_profile').css({"display": "none"});
->>>>>>> sửa css
     });
 });
