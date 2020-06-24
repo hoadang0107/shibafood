@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Restaurant;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,7 +28,8 @@ class AdminController extends Controller
 
     public function getAdminProfile(){
         $res=Restaurant::all();
-        return view('page.adminProfile', ['all_res'=>$res]);
+        $user = User::all();
+        return view('page.adminProfile', ['all_res'=>$res], ['all_user'=>$user]);
     }
 
     public function getDelete($id)
@@ -40,4 +42,10 @@ class AdminController extends Controller
  		}
 
 
+    }
+
+    public function getDeleteUser($id){
+        User::find($id)->delete();
+        return redirect('admin')->with('success','Dữ liệu xóa thành công.');
+    }
 }
