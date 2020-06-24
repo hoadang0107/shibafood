@@ -66,7 +66,7 @@
                             <ul class="dropdown">
                                 @if(Auth::check())
                                 <li><a href="{{url('profile')}}">User Profile</a></li>
-                                <li><a href="{{url('addRes')}}">Add Restaurant</a></li>
+                                <li><a href="{{url('listRestaurant')}}">User's Restaurant</a></li>
                                 <li><a href="{{url('logout')}}">Logout</a></li>    
                                 @else                
                                 <li><a href="{{url('signup')}}">Sign Up</a></li>

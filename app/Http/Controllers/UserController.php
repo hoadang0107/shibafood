@@ -12,6 +12,7 @@ use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
+use App\Restaurant;
 
 
 
@@ -105,7 +106,9 @@ class UserController extends Controller
 			'password.max' => 'Mật khẩu tối đa 32 ký tự'
 		]);
 		if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-			return redirect('home');
+			if(Auth::user()->quyen ==1)
+			return redirect('admin');
+			else return redirect('home');
 		} else {
 			return redirect('login')->with('thongbao', 'Tài khoản hoặc mật khẩu chưa chính xác');
 		}
@@ -168,6 +171,13 @@ class UserController extends Controller
 
 		return redirect('profile')->with('thongbao', 'Thay đổi thành công');
 		
+	}
+
+
+	public function getListRes(){
+		$user = Auth::user();
+		$restaurant = Restaurant::where('userID', $user->id)->get();
+		return view('page.resList',['restaurant'=>$restaurant]);
 	}
 
 

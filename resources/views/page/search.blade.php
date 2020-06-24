@@ -4,7 +4,7 @@
                         @foreach( $restaurant as $restaurant)
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="{{$restaurant->picture}}" alt=""/>
+                                <img src="upload/restaurant/{{$restaurant->picture}}" alt=""/>
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>

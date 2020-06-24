@@ -54,3 +54,4 @@ Route::get('search',[
 'uses'=>'PageController@getSearch'
 ]);
 
+Route::get('listRestaurant','UserController@getListRes');
