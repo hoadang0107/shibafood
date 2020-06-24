@@ -124,6 +124,12 @@ class RestaurantController extends Controller
             $countCmt +=1;
         }
         $Restaurant = Restaurant::find($id);
-        return view('page.restaurant',['resRef'=>$Restaurant,'all_cmt'=>$cmts,'user'=>$commenter,'countCmt'=>$countCmt]);
+        if($countCmt == 0)
+        {   
+            return view('page.restaurant',['resRef'=>$Restaurant,'all_cmt'=>$cmts,'user'=>NULL,'countCmt'=>$countCmt]);
+        }
+        else{
+            return view('page.restaurant',['resRef'=>$Restaurant,'all_cmt'=>$cmts,'user'=>$commenter,'countCmt'=>$countCmt]);
+        }
     }
 }
