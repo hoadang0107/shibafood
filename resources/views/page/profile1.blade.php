@@ -10,7 +10,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             <div class="group-input">
                                 <input type="file" id="img_up" name="avatar" style="display: none"/>
-                                <img src="upload/user/{{$user->avatar}}" class="avatar img-circle img-thumbnail" alt="avatar">
+                                <img src="upload/user/{{$user->avatar}}" class="avatar img-circle img-thumbnail" style="width: 300px; height: 300px; object-fit: contain" alt="avatar">
                                 <p id="Up_img" style="cursor: pointer;">Upload Avatar</p>
                                 @if ($errors->has('file'))
                                 <span class="invalid-feedback" role="alert">
