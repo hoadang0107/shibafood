@@ -23,6 +23,7 @@ class AdminController extends Controller
     }
 
 
+
     public function getAdminProfile(){
         $res=Restaurant::all();
         return view('page.adminProfile', ['all_res'=>$res]);
@@ -35,7 +36,5 @@ class AdminController extends Controller
 	}
     public function logout(){
     	return view ('adminlogin');
- 		
-
-    }
+ 		}
 }
