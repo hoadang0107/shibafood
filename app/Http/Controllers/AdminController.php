@@ -40,9 +40,6 @@ class AdminController extends Controller
 	}
     public function logout(){
     	return view ('adminlogin');
- 		
-
-
     }
 
     public function getDeleteUser($id){

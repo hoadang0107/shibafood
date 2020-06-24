@@ -96,7 +96,6 @@
                                                 <th>UserID</th>
                                                 <th>User Name</th>
                                                 <th>Email</th>
-                                                <th>Password</th>
                                                 <th>Quyền</th>
                                                 <th>Avatar</th>
                                             </tr>
@@ -105,7 +104,6 @@
                                                 <td>{{$user->id}}</td>
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->email}}</td>
-                                                <td>{{$user->password}}</td>
                                                 <td>{{$user->quyen}}</td>
                                                 <td><img src="upload/user/{{$user->avatar}}" style="width: 90px; height: 90px; object-fit: contain"></td>
                                                 <td><a href="admin/deleteUser/{{$user->id}}">Delete</a>
