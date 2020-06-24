@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="off-card">
-                    <h2>Sale <span>50%</span></h2>
+                    <h2>セール <span>50%</span></h2>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="off-card">
-                    <h2>Sale <span>50%</span></h2>
+                    <h2>セール <span>50%</span></h2>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                 <div class="single-banner">
                     <img src="../fashi/img/store_img2.jpg"  alt="">
                     <div class="inner-text">
-                        <h4>Dink’s</h4>
+                        <h4>飲み物</h4>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div class="single-banner">
                     <img src="../fashi/img/nhahang_3.jpg" alt="">
                     <div class="inner-text">
-                        <h4>Food’s</h4>
+                        <h4>食物</h4>
                     </div>
                 </div>
             </div>
@@ -69,14 +69,14 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="product-large set-bg" data-setbg="../fashi/img/products/food_img.jpg">
-                    <h2>Food's</h2>
-                    <a href="#">Discover More</a>
+                    <h2>食物</h2>
+                    <a href="#">もっと発見する</a>
                 </div>
             </div>
             <div class="col-lg-8 offset-lg-1">
                 <div class="filter-control">
                     <ul>
-                        <li class="active">Food</li>
+                        <li class="active">食物</li>
                        <!--     <li>HandBag</li>
                             <li>Shoes</li>
                             <li>Accessories</li>-->
@@ -92,7 +92,7 @@
                                 </div>
                                 <ul>
                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="restaurant/{{$restaurant->id}}">+ Quick View</a></li>
+                                    <li class="quick-view"><a href="restaurant/{{$restaurant->id}}">+ クイックビュー</a></li>
                                     <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                                 </ul>
                             </div>
@@ -102,7 +102,7 @@
                                     <h5>{{$restaurant->name}}</h5>
                                 </a>
                                 <div class="product-price">
-                                    rate: 3/5
+                                 評価: 3/5
                                 </div>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                 <div class="col-lg-8">
                     <div class="filter-control">
                         <ul>
-                            <li class="active">Drink</li>
+                            <li class="active">飲み物</li>
                    <!--         <li>HandBag</li>
                             <li>Shoes</li>
                             <li>Accessories</li>-->
@@ -174,7 +174,7 @@
                                 </div>
                                 <ul>
                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="quick-view"><a href="#">+ クイックビュー</a></li>
                                     <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                                 </ul>
                             </div>
@@ -196,7 +196,7 @@
                                 </div>
                                 <ul>
                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="quick-view"><a href="#">+クイックビュー</a></li>
                                     <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                                 </ul>
                             </div>
@@ -218,7 +218,7 @@
                                 </div>
                                 <ul>
                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="quick-view"><a href="#">+ クイックビュー</a></li>
                                     <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                                 </ul>
                             </div>
@@ -240,7 +240,7 @@
                                 </div>
                                 <ul>
                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="quick-view"><a href="#">+ クイックビュー</a></li>
                                     <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                                 </ul>
                             </div>
@@ -259,7 +259,7 @@
                 <div class="col-lg-3 offset-lg-1">
                     <div class="product-large set-bg m-large" data-setbg="../fashi/img/products/drink_img.jpg">
                         <h2>Drink's</h2>
-                        <a href="#">Discover More</a>
+                        <a href="#">もっと発見する</a>
                     </div>
                 </div>
             </div>
