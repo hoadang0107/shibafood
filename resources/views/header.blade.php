@@ -14,9 +14,9 @@
                 <div class="ht-right">
 
                     @if(Auth::check())
-                    <li><a href="profile" class="login-panel"><i class="fa fa-user"></i>{{Auth::user()->name}}</a>
+                    <li><a href="{{url('profile')}}" class="login-panel"><i class="fa fa-user"></i>{{Auth::user()->name}}</a>
                     @else
-                    <li><a href="login" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <li><a href="{{url('login')}}" class="login-panel"><i class="fa fa-user"></i>Login</a>
                     @endif
                     
                     <div class="lan-selector">
@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="home">
+                            <a href="{{url('home')}}">
                                 <img src="../fashi/img/logo_shiba.png" style="height: 50px; weight: 50px;" alt="">
                             </a>
                         </div>
