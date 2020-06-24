@@ -42,13 +42,13 @@
                         <div class="tab-item">
                             <ul class="nav" role="tablist">
                                 <li>
-                                    <a class="active" data-toggle="tab" href="#tab-1" role="tab">DESCRIPTION</a>
+                                    <a class="active" data-toggle="tab" href="#tab-1" role="tab">説明</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#tab-2" role="tab">DETAILS</a>
+                                    <a data-toggle="tab" href="#tab-2" role="tab">詳細</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#tab-3" role="tab">Customer Reviews ({{$countCmt}})</a>
+                                    <a data-toggle="tab" href="#tab-3" role="tab">カスタマーレビュー ({{$countCmt}})</a>
                                 </li>
                             </ul>
                         </div>
@@ -58,7 +58,7 @@
                                     <div class="product-content">
                                         <div class="row">
                                             <div class="col-lg-7">
-                                                <h5>Introduction</h5>
+                                                <h5>紹介</h5>
                                                 <p>{{ $resRef->description }} </p>
                                             <div class="col-lg-5">
                                                 <img src="img/product-single/tab-desc.jpg" alt="">
@@ -70,7 +70,7 @@
                                     <div class="specification-table">
                                         <table>
                                             <tr>
-                                                <td class="p-catagory">Customer Rating</td>
+                                                <td class="p-catagory">お客様の評価</td>
                                                 <td>
                                                     <div class="pd-rating">
                                                         <i class="fa fa-star"></i>
@@ -83,24 +83,24 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Price</td>
+                                                <td class="p-catagory">価格</td>
                                                 <td>
                                                     <div class="p-price">{{ $resRef->price }}</div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Address</td>
+                                                <td class="p-catagory">住所</td>
                                                 <td>
                                                     <div class="cart-add">{{ $resRef->address }}</div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Menu</td>
+                                                <td class="p-catagory">メニュー</td>
                                                 <td>
                                                     <div class="p-stock">{{ $resRef->menu }}</div>
                                                 </td>
                                                 <tr>
-                                                   <td class="p-catagory">Phone</td>
+                                                   <td class="p-catagory">電話番号</td>
                                                 <td>
                                                     <div class="p-stock">{{ $resRef->phone }}</div>
                                                 </td>
@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="tab-3" role="tabpanel">
                                     <div class="customer-review-option">
-                                        <h4>{{$countCmt}} Comments</h4>
+                                        <h4>{{$countCmt}} コメント</h4>
 
                                         <div class="comment-option">
                                         
@@ -134,7 +134,7 @@
                                             @endforeach
                                         </div>
                                         <div class="personal-rating">
-                                            <h6>Your rating</h6>
+                                            <h6>あなたの評価</h6>
                                             <div class="rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -146,7 +146,7 @@
                                         
                                         @if (Auth::check()) 
                                             <div class="leave-comment">
-                                            <h4>Leave A Comment</h4>
+                                            <h4>コメントを残す</h4>
                                             
                                             <form action="../comment/{{$resRef->id}}" class="comment-form" method="POST" role = "form">
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
@@ -156,7 +156,7 @@
                                                 
                                                     <div class="col-lg-12">
                                                         <textarea placeholder="Messages" name="intent"></textarea>
-                                                        <button type="submit" class="site-btn">Send message</button>
+                                                        <button type="submit" class="site-btn">メッセージを送る</button>
                                                     </div>
                                                 </div>
                                             </form>                                            
