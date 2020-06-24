@@ -84,9 +84,10 @@
                     </div>
                     <div class="product-slider owl-carousel">
                         @foreach($all_res as $restaurant)
+                        @if ($restaurant->duyet) 
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="upload/restaurant/{{$restaurant->picture}}" alt="">
+                                <img src="{{$restaurant->picture}}" alt="">
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>
@@ -106,6 +107,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                         @endforeach
                     </div>
                 </div>

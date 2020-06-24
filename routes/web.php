@@ -41,8 +41,14 @@ Route::get('profile', 'UserController@getProfile');
 Route::post('profile', 'UserController@postProfile');
 
 Route::get('admin', 'AdminController@getAdminProfile');
+Route::get('admin',[
+'as'=>'admin',
+'uses'=>'AdminController@getAdminProfile'
+]);
 Route::get('dashboard', 'AdminController@showDashboard');
 Route::post('admindashboard', 'AdminController@dashboard');
+Route::get('/Verify/{id}', 'AdminController@Verify');
+
 
 Route::get('search',[
 'as'=>'search',

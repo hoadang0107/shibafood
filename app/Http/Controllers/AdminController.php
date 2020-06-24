@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+use App\Restaurant;
+
 
 class AdminController extends Controller
 {
@@ -22,6 +24,15 @@ class AdminController extends Controller
     }
 
     public function getAdminProfile(){
-        return view('page.adminProfile');
+        $res=Restaurant::all();
+        return view('page.adminProfile',['all_res'=>$res]);
+    }
+    public function Verify($id){
+        $res = Restaurant::find($id);
+        $res->duyet = 1;
+        $res->save();
+
+        return redirect()->route('admin');
+
     }
 }
