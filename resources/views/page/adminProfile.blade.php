@@ -10,7 +10,7 @@
                             <div class="d-flex justify-content-start">
                                 
                                 <div class="userData ml-3">
-                                <h2>ADMIN</h2>
+                                <h2>管理者</h2>
                                 </div>
                             </div>
                         </div>
@@ -19,13 +19,13 @@
                             <div class="col-12">
                                 <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">List Store</a>
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">店舗一覧</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Check Store</a>
+                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">店舗承認</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="listUser-tab" data-toggle="tab" href="#listUser" role="tab" aria-controls="listUser" aria-selected="false">List Users</a>
+                                        <a class="nav-link" id="listUser-tab" data-toggle="tab" href="#listUser" role="tab" aria-controls="listUser" aria-selected="false">ユーザ一覧</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content ml-1" id="myTabContent">

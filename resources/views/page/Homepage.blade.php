@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                        <span>Retaurant</span>
+                        <span>Restaurant</span>
                         <h1 Style="color: white">Black friday</h1>
 
                         <a href="#" class="primary-btn">View Now</a>
@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                        <span>Retaurant</span>
+                        <span>Restaurant</span>
                         <h1 Style="color: white"> Black friday</h1>
                         <p Style="color: white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore</p>
@@ -84,9 +84,10 @@
                     </div>
                     <div class="product-slider owl-carousel">
                         @foreach($all_res as $restaurant)
+                        @if ($restaurant->duyet)
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="upload/restaurant/{{$restaurant->picture}}" alt="">
+                                <img src="upload/restaurant/{{$restaurant->picture}}" style="width: 90px; height: 90px; object-fit: contain">
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>
@@ -106,6 +107,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                         @endforeach
                     </div>
                 </div>
