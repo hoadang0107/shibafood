@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Restaurant;
-
+use App\Comment;
+use App\User;
+use Illuminate\Support\Facades\DB;
 
 class RestaurantController extends Controller
 {
@@ -108,7 +110,20 @@ class RestaurantController extends Controller
 
     }
     public function getRes($id){
+        $countCmt = 0;
+        $cmts = DB::table('comments')
+                ->where('comments.resID', "$id")
+                ->get();
+        $User = DB::table('users')
+                ->where('users.id', "$id")
+                ->get();
+        foreach ($cmts as $cmt) {
+            $commenter = User::where('id', $cmt->userID)->first();
+        }
+        foreach ($cmts as $cmt) {
+            $countCmt +=1;
+        }
         $Restaurant = Restaurant::find($id);
-        return view('page.restaurant',['resRef'=>$Restaurant]);
+        return view('page.restaurant',['resRef'=>$Restaurant,'all_cmt'=>$cmts,'user'=>$commenter,'countCmt'=>$countCmt]);
     }
 }
