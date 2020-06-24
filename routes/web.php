@@ -33,6 +33,8 @@ Route::get('restaurant/{id}',[
 'uses'=>'RestaurantController@getRes'
 ]);
 
+Route::post('comment/{id}','CommentController@postAddCmt'); 
+Route::get('comment/{id}','CommentController@getAddCmt'); 
 
 Route::post('editRes/{id}', 'RestaurantController@postEditRes');
 Route::get('editRes/{id}', 'RestaurantController@getEditRes');
