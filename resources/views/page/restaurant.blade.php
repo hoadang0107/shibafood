@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="product-pic-zoom">
-                                <img class="product-big-img" src="{{$resRef->picture}}" alt="">
+                                <img class="product-big-img" src="../upload/restaurant/{{$resRef->picture}}" alt="">
                                 <div class="zoom-icon">
                                     <i class="fa fa-search-plus"></i>
                                 </div>
@@ -34,13 +34,7 @@
                                     <i class="fa fa-star-o"></i>
                                     <span>(5)</span>
                                 </div>
-                                <div class="pd-share">
-                                    <div class="pd-social">
-                                        <a href="#"><i class="ti-facebook"></i></a>
-                                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                                        <a href="#"><i class="ti-linkedin"></i></a>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

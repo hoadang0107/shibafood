@@ -9,7 +9,7 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="group-input">
                         <input type="file" id="img_up" name="avatar" style="display: none"/>
-                        <img src="upload/restaurant/{{$res->picture}}" class="avatar img-circle img-thumbnail" alt="avatar">
+                        <img src="../upload/restaurant/{{$res->picture}}" class="avatar img-circle img-thumbnail" alt="avatar">
                         <p id="Up_img" style="cursor: pointer;">Upload Avatar</p>
                         @if ($errors->has('file'))
                         <span class="invalid-feedback" role="alert">
@@ -58,8 +58,8 @@
         </div>
     </div>
 </div>
-<script src="../resources/js/jquery.min.js"></script>
-<script src="../resources/js/signup.js"></script>
+<script src="../../resources/js/jquery.min.js"></script>
+<script src="../../resources/js/signup.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 @endsection

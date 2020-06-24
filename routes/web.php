@@ -37,10 +37,7 @@ Route::get('restaurant/{id}',[
 Route::post('editRes/{id}', 'RestaurantController@postEditRes');
 Route::get('editRes/{id}', 'RestaurantController@getEditRes');
 
-Route::get('profile',[
-    'as'=> 'profile',
-    'uses' => 'PageController@getProfile'
-]);
+Route::get('profile', 'UserController@getProfile');
 Route::post('profile', 'UserController@postProfile');
 
 Route::get('admin', 'AdminController@getAdminProfile');

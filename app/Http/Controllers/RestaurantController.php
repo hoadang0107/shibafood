@@ -70,7 +70,8 @@ class RestaurantController extends Controller
         return view('page.editRes',['res'=>$res]);
     }
     public function postEditRes(Request $request,$id){
-        $res = Restaurant::find($id);
+        echo "Loi";
+        /*$res = Restaurant::find($id);
         $this->validate($request,
             [
                 'name' => 'required|min:3|max:100|unique:Restaurants,name'
@@ -105,6 +106,7 @@ class RestaurantController extends Controller
      
         $res->save();
         return redirect('home');
+        */
 
     }
     public function getRes($id){
