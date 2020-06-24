@@ -22,6 +22,9 @@ class AdminController extends Controller
  		return view ('admin.dashboard');
     }
 
+
+
+
     public function getAdminProfile(){
         $res=Restaurant::all();
         return view('page.adminProfile', ['all_res'=>$res]);
@@ -31,5 +34,10 @@ class AdminController extends Controller
     {
         Restaurant::find($id)->delete();
         return redirect('admin')->with('success','Dữ liệu xóa thành công.');
-    }
+	}
+    public function logout(){
+    	return view ('adminlogin');
+ 		}
+
+
 }

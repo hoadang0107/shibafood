@@ -25,8 +25,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="log-w3">
 <div class="w3layouts-main">
 	<h2>Đăng Nhập</h2>
-		<form action="admindashboard" method="POST">
-			 
+		<form action="admindashboard" method="post">
+			 {{csrf_field()}}
 			<input type="text" class="ggg" name="adminemail" placeholder="NHẬP E-MAIL" required="">
 			<input type="password" class="ggg" name="adminpassword" placeholder="MẬT KHẨU" required="">
 			<span><input type="checkbox" />Nhớ đăng nhập</span>
