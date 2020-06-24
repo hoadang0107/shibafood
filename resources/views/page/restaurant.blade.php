@@ -125,9 +125,7 @@
                                             @foreach($all_cmt as $comment)
 
                                             <div class="co-item">
-                                                <div class="avatar-pic">
-                                                    <img src="{{$user->avatar}}" alt="">
-                                                </div>
+                                                
                                                 <div class="avatar-text">
                                                     <div class="at-rating">
                                                         <i class="fa fa-star"></i>
