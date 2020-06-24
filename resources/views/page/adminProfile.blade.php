@@ -34,7 +34,7 @@
                                         @endif
                                         <table style="width: 100%">
                                             <tr>
-                                                <th>Number</th>
+                                                <th>Store ID</th>
                                                 <th>Store Name</th>
                                                 <th>UserID</th>
                                                 <th>Review</th>
