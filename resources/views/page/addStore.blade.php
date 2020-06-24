@@ -51,7 +51,7 @@
                     </span>
                     
                     @endif
-                    <button type="submit" class="site-btn register-btn" style="margin-top: 20px; margin-bottom: 20px">ADD</button>
+                    <button type="submit" class="site-btn register-btn" style="margin-top: 20px; margin-bottom: 20px">追加</button>
                 </form>
             
             </div>
