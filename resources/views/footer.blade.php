@@ -8,8 +8,8 @@
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello.colorlib@gmail.com</li>
+                            <li>Phone: +88 66 88 66</li>
+                            <li>Email: ShibaFood@gmail.com</li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>

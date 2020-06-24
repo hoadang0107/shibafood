@@ -36,15 +36,15 @@
                                 <span>(5)</span>
                             </div>      
                             <div>                         
-                                <label style="font-size: 18px; font-weight: 70%;">Address: {{$resRef->address}}</label>
+                                <label style="font-size: 18px; font-weight: 70%;">住所: {{$resRef->address}}</label>
                             </div> 
                             <div>
-                                <label style="font-size: 18px; font-weight: 70%;">Phone: {{$resRef->phone}}</label>
+                                <label style="font-size: 18px; font-weight: 70%;">電話番号: {{$resRef->phone}}</label>
                             </div> 
                             <div>
-                                <label style="font-size: 18px; font-weight: 70%;">Menu: {{$resRef->menu}}</label>
+                                <label style="font-size: 18px; font-weight: 70%;">メニュー: {{$resRef->menu}}</label>
                             </div> 
-                            <label style="font-size: 18px; font-weight: 70%;">Price: {{$resRef->price}}</label>
+                            <label style="font-size: 18px; font-weight: 70%;">価格: {{$resRef->price}}</label>
                             <div>
                                 <label style="font-size: 17px; font-weight: 70%;">Introduction: {{$resRef->description}}</label>
                             </div> 
@@ -55,10 +55,10 @@
                     <div class="tab-item">
                         <ul class="nav" role="tablist">
                             <li>
-                                <a data-toggle="tab" href="#tab-2" role="tab">Add Review</a>
+                                <a data-toggle="tab" href="#tab-2" role="tab">口コミ投稿</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#tab-3" role="tab">Customer Reviews ({{$countCmt}})</a>
+                                <a data-toggle="tab" href="#tab-3" role="tab">口コミ一覧 ({{$countCmt}})</a>
                             </li>
                         </ul>
                     </div>
@@ -76,7 +76,7 @@
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input type="file" id="img_up" name="avatar" style="display: none"/>
                                     <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                                    <p id="Up_img" style="cursor: pointer;">Upload Picture</p>
+                                    <p id="Up_img" style="cursor: pointer;">写真アップ</p>
                                     @if ($errors->has('file'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('file') }}</strong>
@@ -91,13 +91,13 @@
 
                                         </textarea>
                                     </div>
-                                    <button type="submit" class="site-btn">Send message</button>
+                                    <button type="submit" class="site-btn">投稿</button>
                                 </form>
                                 @endif
                             </div>
                             <div class="tab-pane fade" id="tab-3" role="tabpanel">
                                 <div class="customer-review-option">
-                                    <h4>{{$countCmt}} Comments</h4>
+                                    <h4>{{$countCmt}} 口コミ</h4>
 
                                     <div class="comment-option">
 

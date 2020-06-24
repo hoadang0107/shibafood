@@ -9,7 +9,7 @@
                     <form method="POST" action="login">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="group-input">
-                            <label for="username">Email address *</label>
+                            <label for="username">電子メールアドレス *</label>
                             <input type="email" id="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autofocus>
                             @if ($errors->has('email'))
                             <span class="invalid-feedback" role="alert">
@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="group-input">
-                            <label for="pass">Password *</label>
+                            <label for="pass">パスワード *</label>
                             <input type="password" id="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"  required>
                             @if ($errors->has('password'))
                             <span class="invalid-feedback" role="alert">
@@ -30,11 +30,11 @@
                         <div class="group-input gi-check">
                             <div class="gi-more">
                                 <label for="save-pass">
-                                    Save Password
+                                    パスワードを保存する
                                     <input type="checkbox" id="save-pass">
                                     <span class="checkmark"></span>
                                 </label>
-                                <a href="#" class="forget-pass">Forget your Password</a>
+                                <a href="#" class="forget-pass">パスワードを忘れた</a>
                             </div>
                         </div>
                         @if(session('thongbao'))
@@ -42,10 +42,10 @@
                            {{session('thongbao')}}
                        </div>
                        @endif
-                       <button type="submit" class="site-btn login-btn">Sign In</button>
+                       <button type="submit" class="site-btn login-btn">サインイン</button>
                    </form>
                    <div class="switch-login">
-                    <a href="signup" class="or-login">Or Create An Account</a>
+                    <a href="signup" class="or-login">またはアカウントを作成</a>
                 </div>
             </div>
         </div>

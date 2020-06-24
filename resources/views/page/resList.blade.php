@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-lg-6 offset-lg-3">
 				<div class="register-form">
-					<h2>User's Restaurant</h2>
+					<h2>ユーザの店舗</h2>
 					@foreach( $restaurant as $res)
 					<div class="product-item">
 						<div class="pi-pic">
@@ -16,7 +16,7 @@
 							</div>
 							<ul>
 								<li class="w-icon active"><a href="editRes/{{$res->id}}"><i class="icon_bag_alt"></i></a></li>
-								<li class="quick-view"><a href="restaurant/{{$res->id}}">+ Quick View</a></li>
+								<li class="quick-view"><a href="restaurant/{{$res->id}}">+ クイックビュー</a></li>
 								<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
 							</ul>
 						</div>
