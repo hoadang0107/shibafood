@@ -20,7 +20,7 @@ class CommentController extends Controller
                 ->get();
     	return view('page.restaurant',['all_cmt'=>$cmt]);
     }
-    public function getAddCmt($id){
+    public function getAddCmt(){
         $resId = $id;
         $comment = Comment::all();
         $restaurant = Restaurant::find($id);
@@ -42,6 +42,35 @@ class CommentController extends Controller
         $comment -> userID = Auth::user()->id;
         $comment-> save();
         return redirect("../restaurant/$id/");
+
+    }
+
+    public function postComment(Request $request){
+        $comment = new Comment();
+        $comment->userID = Auth::user()->id;
+        $comment->resID = $request->id;
+        $comment->rate = $request->rating;
+        $comment->intent = $request->intent;
+        if ($request->hasFile('avatar')){
+            // Lấy  file
+            $file = $request->file('avatar');
+
+            $duoi=$file->getClientOriginalExtension();
+            if($duoi !='jpg' && $duoi !='png' && $duoi !='jpeg'){
+                return redirect('signup')->with('thongbao','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
+            }
+            $name=$file->getClientOriginalName();
+            if(!file_exists("upload/comment/" .$name))
+            $file->move("upload/comment",$name);
+            $comment->picture=$name;
+        }
+        else
+        {
+            $user->avatar="";
+
+        }
+        $comment->save();
+        return redirect("restaurant/$request->id");
 
     }
      public function getEditCmt($id){

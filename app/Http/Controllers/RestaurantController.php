@@ -41,12 +41,12 @@ class RestaurantController extends Controller
         $res->menu = $request->menu;
         $res->price = $request->price;
         $res->description = $request->description;
-        $res->duyet = 1;
+        $res->duyet = 0;
         $res->rating = 0;
 
-        if ($request->hasFile('store_img')){
+        if ($request->hasFile('avatar')){
             // Lấy  file
-            $file = $request->file('store_img');
+            $file = $request->file('avatar');
 
             $duoi=$file->getClientOriginalExtension();
             if($duoi !='jpg' && $duoi !='png' && $duoi !='jpeg'){
@@ -125,10 +125,10 @@ class RestaurantController extends Controller
         $Restaurant = Restaurant::find($id);
         if($countCmt == 0)
         {   
-            return view('page.restaurant',['resRef'=>$Restaurant,'all_cmt'=>$cmts,'user'=>NULL,'countCmt'=>$countCmt]);
+            return view('page.restaurant1',['resRef'=>$Restaurant,'all_cmt'=>$cmts,'user'=>NULL,'countCmt'=>$countCmt]);
         }
         else{
-            return view('page.restaurant',['resRef'=>$Restaurant,'all_cmt'=>$cmts,'user'=>$commenter,'countCmt'=>$countCmt]);
+            return view('page.restaurant1',['resRef'=>$Restaurant,'all_cmt'=>$cmts,'user'=>$commenter,'countCmt'=>$countCmt]);
         }
     }
 }

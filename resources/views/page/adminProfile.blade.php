@@ -38,18 +38,26 @@
                                         <table style="width: 100%">
                                             <tr>
                                                 <th>Store ID</th>
+                                                <th>User</th>
+                                                <th>Picture</th>
                                                 <th>Store Name</th>
-                                                <th>UserID</th>
-                                                <th>Review</th>
+                                                <th>Phone</th>
+                                                <th>Address</th>
+                                                <th>Menu</th>
+                                                <th>Price</th>
                                                 <th>Star</th>
                                             </tr>
                                             @foreach($all_res as $restaurant)
                                             @if ($restaurant->duyet)
                                             <tr>
                                                 <td>{{$restaurant->id}}</td>
-                                                <td>{{$restaurant->name}}</td>
                                                 <td>{{$restaurant->userID}}</td>
-                                                <td>{{$restaurant->description}}</td>
+                                                <td><img src="upload/restaurant/{{$restaurant->picture}}" style="width: 90px; height: 90px; object-fit: contain"></td>
+                                                <td>{{$restaurant->name}}</td>
+                                                <td>{{$restaurant->phone}}</td>
+                                                <th>{{$restaurant->address}}</th> 
+                                                <th>{{$restaurant->menu}}</th>                                 
+                                                <td>{{$restaurant->price}}</td>
                                                 <td>{{$restaurant->rating}}</td>
                                                 <td><a href="admin/delete/{{$restaurant->id}}">Delete</a>
                                                 </td>
@@ -63,19 +71,25 @@
                                          <table style="width: 100%">
                                             <tr>
                                                 <th>Store ID</th>
-                                                <th>Store Name</th>
                                                 <th>User</th>
-                                                <th>Review</th>
-                                                <th>Star</th>
+                                                <th>Picture</th>
+                                                <th>Store Name</th>
+                                                <th>Phone</th>
+                                                <th>Address</th>
+                                                <th>Menu</th>
+                                                <th>Price</th>
                                             </tr>
                                             @foreach($all_res as $restaurant)
                                             @if (!$restaurant->duyet)
                                             <tr>        
                                                 <td>{{$restaurant->id}}</td>
-                                                <td>{{$restaurant->name}}</td>
                                                 <td>{{$restaurant->userID}}</td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><img src="upload/restaurant/{{$restaurant->picture}}" style="width: 90px; height: 90px; object-fit: contain"></td>
+                                                <td>{{$restaurant->name}}</td>
+                                                <td>{{$restaurant->phone}}</td>
+                                                <th>{{$restaurant->address}}</th> 
+                                                <th>{{$restaurant->menu}}</th>                                 
+                                                <td>{{$restaurant->price}}</td>
 
                                                 <td><a href="Verify/{{ $restaurant->id }}"><input type="submit" name="pending" value="Verify"
                                                                          class="site-btn register-btn"></a></td>

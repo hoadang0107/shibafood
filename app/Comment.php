@@ -9,6 +9,7 @@ class Comment extends Model
     //
     protected $table = "Comments";
 
+
     public function restaurant(){
     	return $this->belongsTo('App\Restaurant','resID','id');
     }
