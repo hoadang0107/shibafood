@@ -35,14 +35,16 @@
                         <textarea  id="Description" name="description" style="width: 100%; height: 100px"></textarea>
                     </div>
                     <div class="group-input">
-                        <label for="store_img">Store Image</label>
-                        <img id="img_store" src="../fashi/img/upload.png" style="cursor: pointer; width: 40px; height: 40px"/>
+                        <input type="file" id="img_up" name="avatar" style="display: none"/>
+                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                        <p id="Up_img" style="cursor: pointer;">Upload Avatar</p>
+                        @if ($errors->has('file'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('file') }}</strong>
+                        </span>
+                        @endif
                     </div>
-                    <div class="group-input" id="image_store" style="display: inline-block">
-                    </div>
-                    <div class="group-input">
-                        <input id="store_img" name="store_img" type="file" style="display: none" />
-                    </div>
+                    
                     @if(session('thongbao'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{session('thongbao')}}</strong>
@@ -56,5 +58,8 @@
         </div>
     </div>
 </div>
+<script src="../resources/js/jquery.min.js"></script>
+<script src="../resources/js/signup.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 @endsection

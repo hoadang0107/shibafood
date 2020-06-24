@@ -60,17 +60,17 @@
             <div class="container">
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="home">Home</a></li>
+                        <li class="active"><a href="{{url('home')}}">Home</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 @if(Auth::check())
-                                <li><a href="profile">User Profile</a></li>
-                                <li><a href="addRes">Add Restaurant</a></li>
-                                <li><a href="logout">Logout</a></li>    
+                                <li><a href="{{url('profile')}}">User Profile</a></li>
+                                <li><a href="{{url('addRes')}}">Add Restaurant</a></li>
+                                <li><a href="{{url('logout')}}">Logout</a></li>    
                                 @else                
-                                <li><a href="signup">Sign Up</a></li>
-                                <li><a href="login">Login</a></li>
+                                <li><a href="{{url('signup')}}">Sign Up</a></li>
+                                <li><a href="{{url('login')}}">Login</a></li>
                                 @endif
                             </ul>
                         </li>

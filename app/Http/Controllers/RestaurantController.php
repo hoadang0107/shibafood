@@ -88,13 +88,13 @@ class RestaurantController extends Controller
         $res->price = $request->price;
         $res->description = $request->description;
 
-        if ($request->hasFile('store_img')){
+        if ($request->hasFile('avatar')){
             // Lấy  file
-            $file = $request->file('store_img');
+            $file = $request->file('avatar');
 
             $duoi=$file->getClientOriginalExtension();
             if($duoi !='jpg' && $duoi !='png' && $duoi !='jpeg'){
-                return redirect('signup')->with('thongbao','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
+                //return redirect()->back()->with('thongbao','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
             }
             $name=$file->getClientOriginalName();
             if(!file_exists("upload/restaurant/" .$name))
