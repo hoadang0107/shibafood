@@ -5,7 +5,7 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="register-form">
                 <h2 style="padding-top: 10px;">Edit Restaurant</h2>
-                <form method="POST" action="editRes/{{$res->id}}" enctype="multipart/form-data">
+                <form method="POST" action="{{$res->id }}"  enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="group-input">
                         <input type="file" id="img_up" name="avatar" style="display: none"/>

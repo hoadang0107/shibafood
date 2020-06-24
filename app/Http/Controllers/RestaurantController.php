@@ -71,16 +71,14 @@ class RestaurantController extends Controller
         $res = Restaurant::find($id);
         return view('page.editRes',['res'=>$res]);
     }
-    public function postEditRes(Request $request,$id){
-        echo "Loi";
-        /*$res = Restaurant::find($id);
+    public function postEditRes(Request $request){
+        $res = Restaurant::find($request->id);
         $this->validate($request,
             [
-                'name' => 'required|min:3|max:100|unique:Restaurants,name'
+                'name' => 'required|min:3|max:100'
             ],
             [
                 'name.required'=>'Bạn chưa nhập tên thể loại',
-                'name.unique'=>'Tên nhà hàng đã tồn tại',
                 'name.min'=>'Tên nhà hàng phải có độ dài từ 3 đến 100 kí tự',
                 'name.max'=>'Tên nhà hàng phải có độ dài từ 3 đến 100 kí tự'
             ]);
@@ -107,8 +105,7 @@ class RestaurantController extends Controller
         }
      
         $res->save();
-        return redirect('home');
-        */
+        return redirect('listRestaurant');
 
     }
     public function getRes($id){

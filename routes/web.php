@@ -53,6 +53,5 @@ Route::get('search',[
 'as'=>'search',
 'uses'=>'PageController@getSearch'
 ]);
-Route::get('logout', 'AdminController@logout');
 
 Route::get('listRestaurant','UserController@getListRes');

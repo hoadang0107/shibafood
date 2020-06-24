@@ -17,16 +17,14 @@ class AdminController extends Controller
     	return view('admin.dashboard');
     }
     public function dashboard(Request $request){
- 		$adminemail = $request->adminemail;
- 		$adminpassword = md5($request->adminpassword);
- 		$result = DB::table('tbl_admin')->where('adminemail',$adminemail)->where('adminpassword',$adminpassword)->first();
- 		return view ('admin.dashboard');
-    }
+     $adminemail = $request->adminemail;
+     $adminpassword = md5($request->adminpassword);
+     $result = DB::table('tbl_admin')->where('adminemail',$adminemail)->where('adminpassword',$adminpassword)->first();
+     return view ('admin.dashboard');
+ }
 
 
-
-
-    public function getAdminProfile(){
+     public function getAdminProfile(){
         $res=Restaurant::all();
         $user = User::all();
         return view('page.adminProfile', ['all_res'=>$res], ['all_user'=>$user]);
@@ -36,13 +34,12 @@ class AdminController extends Controller
     {
         Restaurant::find($id)->delete();
         return redirect('admin')->with('success','Dữ liệu xóa thành công.');
-	}
-    public function logout(){
-    	return view ('adminlogin');
- 		}
-
-
     }
+    public function logout(){
+       return view ('adminlogin');
+    }
+
+
 
     public function getDeleteUser($id){
         User::find($id)->delete();
