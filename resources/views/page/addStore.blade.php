@@ -4,32 +4,32 @@
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
             <div class="register-form">
-                <h2 style="padding-top: 10px;">Add Store</h2>
+                <h2 style="padding-top: 10px;">レストランを追加</h2>
                 <form method="POST" action="addRes" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="group-input">
-                        <label for="name_f">Store Name *</label>
+                        <label for="name_f">レストランの名 *</label>
                         <input type="text" name="name" id="name_f" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required/>
                     </div>
                     <div class="group-input">
-                        <label for="address">Store Address *</label>
+                        <label for="address">レストランの住所 *</label>
                         <input type="text" id="address" name="address"  required autofocus>
                     </div>
                     <div class="group-input">
-                        <label for="phone">Phone </label>
+                        <label for="phone">電話 </label>
                         <input type="text" id="phone" name="phone"  />
                     </div>
                     
                     <div class="group-input">
-                        <label for="address">Menu *</label>
+                        <label for="address">メニュー *</label>
                         <input type="text" id="menu" name="menu"  required autofocus>
                     </div>
                     <div class="group-input">
-                        <label for="address">Price</label>
+                        <label for="address">価格</label>
                         <input type="text" id="price" name="price"  required autofocus>
                     </div>
                     <div class="group-input" >
-                        <label for="mota">Description</label>
+                        <label for="mota">前書き</label>
                     </div>
                     <div class="group-input" >
                         <textarea  id="Description" name="description" style="width: 100%; height: 100px"></textarea>
@@ -37,7 +37,7 @@
                     <div class="group-input">
                         <input type="file" id="img_up" name="avatar" style="display: none"/>
                         <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                        <p id="Up_img" style="cursor: pointer;">Upload Avatar</p>
+                        <p id="Up_img" style="cursor: pointer;">アバターをアップロード</p>
                         @if ($errors->has('file'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('file') }}</strong>
