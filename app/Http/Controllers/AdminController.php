@@ -28,6 +28,7 @@ class AdminController extends Controller
         $res=Restaurant::all();
         $user = User::all();
         return view('page.adminProfile', ['all_res'=>$res], ['all_user'=>$user]);
+
     }
 
     public function getDelete($id)
@@ -35,14 +36,19 @@ class AdminController extends Controller
         Restaurant::find($id)->delete();
         return redirect('admin')->with('success','Dữ liệu xóa thành công.');
     }
-    public function logout(){
-       return view ('adminlogin');
-    }
-
 
 
     public function getDeleteUser($id){
         User::find($id)->delete();
         return redirect('admin')->with('success','Dữ liệu xóa thành công.');
     }
+    public function Verify($id){
+        $res = Restaurant::find($id);
+        $res->duyet = 1;
+        $res->save();
+
+        return redirect()->route('admin');
+
+    }
+
 }

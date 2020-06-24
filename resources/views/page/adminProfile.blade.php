@@ -44,6 +44,7 @@
                                                 <th>Star</th>
                                             </tr>
                                             @foreach($all_res as $restaurant)
+                                            @if ($restaurant->duyet)
                                             <tr>
                                                 <td>{{$restaurant->id}}</td>
                                                 <td>{{$restaurant->name}}</td>
@@ -53,11 +54,36 @@
                                                 <td><a href="admin/delete/{{$restaurant->id}}">Delete</a>
                                                 </td>
                                             </tr>
+                                            @endif
                                             @endforeach                                            
                                         </table>
                                     </div>
                                     <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
                                         Tab check
+                                         <table style="width: 100%">
+                                            <tr>
+                                                <th>Store ID</th>
+                                                <th>Store Name</th>
+                                                <th>User</th>
+                                                <th>Review</th>
+                                                <th>Star</th>
+                                            </tr>
+                                            @foreach($all_res as $restaurant)
+                                            @if (!$restaurant->duyet)
+                                            <tr>        
+                                                <td>{{$restaurant->id}}</td>
+                                                <td>{{$restaurant->name}}</td>
+                                                <td>{{$restaurant->userID}}</td>
+                                                <td></td>
+                                                <td></td>
+
+                                                <td><a href="Verify/{{ $restaurant->id }}"><input type="submit" name="pending" value="Verify"
+                                                                         class="site-btn register-btn"></a></td>
+
+                                            </tr>
+                                            @endif
+                                            @endforeach                                                 
+                                        </table>
                                     </div>
                                     <div class="tab-pane fade" id="listUser" role="tabpanel" aria-labelledby="ListUser-tab">
                                         @if(session('success'))
@@ -70,7 +96,6 @@
                                                 <th>UserID</th>
                                                 <th>User Name</th>
                                                 <th>Email</th>
-                                                <th>Password</th>
                                                 <th>Quyền</th>
                                                 <th>Avatar</th>
                                             </tr>
@@ -79,7 +104,6 @@
                                                 <td>{{$user->id}}</td>
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->email}}</td>
-                                                <td>{{$user->password}}</td>
                                                 <td>{{$user->quyen}}</td>
                                                 <td><img src="upload/user/{{$user->avatar}}" style="width: 90px; height: 90px; object-fit: contain"></td>
                                                 <td><a href="admin/deleteUser/{{$user->id}}">Delete</a>
